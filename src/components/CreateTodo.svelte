@@ -1,6 +1,6 @@
 <script>
     import shortid from 'shortid'
-    import { todos } from '~/store'
+    import { todos, saveStorage } from '~/store'
     
     let title = ''
 
@@ -13,6 +13,8 @@
             title
         })
         $todos = $todos
+        saveStorage()
+        
         title = ''
         console.log($todos)
     }

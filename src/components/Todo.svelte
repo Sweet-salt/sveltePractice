@@ -1,4 +1,5 @@
 <script>
+    import {todos, saveStorage} from '~/store'
     export let todo
 
     let isEditMode = false
@@ -12,9 +13,11 @@
     }
     function deleteTodo() {
         $todos = $todos.filter(t => t.id !== todo.id)
+        saveStorage()
     }
     function updateTodo() {
         todo.title = title
+        saveStorage()
         offEditTodo()
     }
 </script>
